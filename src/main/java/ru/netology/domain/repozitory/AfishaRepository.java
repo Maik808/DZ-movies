@@ -4,19 +4,7 @@ import ru.netology.domain.Film;
 
 public class AfishaRepository {
     Film[] films = new Film[0];
-    /*
-    Film[] films = {new Film(1, "Call of the ancestors", "action"),
-            new Film(2, "Forward", "action"),
-            new Film(3, "Green mile", "drama"),
-            new Film(4, "Capernaum", "drama"),
-            new Film(5, "Beginning", "fantastic"),
-            new Film(6, "Avatar", "fantastic"),
-            new Film(7, "Howl's moving castle", "fantastic"),
-            new Film(8, "Diamond hand", "comedy"),
-            new Film(9, "Good luck gentlemen", "comedy")
-    };
 
-     */
 
     public Film[] findAll() {
         return films;
