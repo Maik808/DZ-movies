@@ -3,6 +3,8 @@ package ru.netology.domain.repozitory;
 import ru.netology.domain.Film;
 
 public class AfishaRepository {
+    Film[] films = new Film[0];
+    /*
     Film[] films = {new Film(1, "Call of the ancestors", "action"),
             new Film(2, "Forward", "action"),
             new Film(3, "Green mile", "drama"),
@@ -13,6 +15,8 @@ public class AfishaRepository {
             new Film(8, "Diamond hand", "comedy"),
             new Film(9, "Good luck gentlemen", "comedy")
     };
+
+     */
 
     public Film[] findAll() {
         return films;

@@ -1,5 +1,6 @@
 package ru.netology.domain.manager;
 
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import ru.netology.domain.repozitory.AfishaRepository;
 import ru.netology.domain.Film;
@@ -8,6 +9,32 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class AfishaManagerTest {
     AfishaRepository repository = new AfishaRepository();
+
+    private Film filmOne = new Film(1, "Call of the ancestors", "action");
+    private Film filmTwo = new Film(2, "Forward", "action");
+    private Film filmThree = new Film(3, "Green mile", "drama");
+    private Film filmFour = new Film(4, "Capernaum", "drama");
+    private Film filmFive = new Film(5, "Beginning", "fantastic");
+    private Film filmSix = new Film(6, "Avatar", "fantastic");
+    private Film filmSeven = new Film(7, "Howl's moving castle", "fantastic");
+    private Film filmEight = new Film(8, "Diamond hand", "comedy");
+    private Film filmNine = new Film(9, "Good luck gentlemen", "comedy");
+
+
+    @BeforeEach
+
+    public void setUp() {
+        repository.save(filmOne);
+        repository.save(filmTwo);
+        repository.save(filmThree);
+        repository.save(filmFour);
+        repository.save(filmFive);
+        repository.save(filmSix);
+        repository.save(filmSeven);
+        repository.save(filmEight);
+        repository.save(filmNine);
+    }
+
     Film[] expected = {new Film(9, "Good luck gentlemen", "comedy"),
             new Film(8, "Diamond hand", "comedy"),
             new Film(7, "Howl's moving castle", "fantastic"),
