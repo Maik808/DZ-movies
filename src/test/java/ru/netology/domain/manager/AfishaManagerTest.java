@@ -48,14 +48,14 @@ class AfishaManagerTest {
 
     @Test
     void shouldShowTenFilms() {
-        AfishaManager manager = new AfishaManager(repository,10);
+        AfishaManager manager = new AfishaManager(repository, 10);
         Film[] actual = manager.getLastAdded();
         assertArrayEquals(expected, actual);
     }
 
     @Test
     void shouldShowPositive() {
-        AfishaManager manager = new AfishaManager(repository,9);
+        AfishaManager manager = new AfishaManager(repository, 9);
         Film filmToAdd = new Film(30, "Dunkerk", "action");
         manager.addFilm(filmToAdd);
         Film[] actual = manager.getLastAdded();
@@ -74,21 +74,21 @@ class AfishaManagerTest {
 
     @Test
     void shouldShowNothing() {
-        AfishaManager manager = new AfishaManager(repository,0);
+        AfishaManager manager = new AfishaManager(repository, 0);
         Film[] actual = manager.getLastAdded();
         assertArrayEquals(expected, actual);
     }
 
     @Test
     void shouldShowAboveMax() {
-        AfishaManager manager = new AfishaManager(repository,15);
+        AfishaManager manager = new AfishaManager(repository, 15);
         Film[] actual = manager.getLastAdded();
         assertArrayEquals(expected, actual);
     }
 
     @Test
     void shouldShowNegative() {
-        AfishaManager manager = new AfishaManager(repository,-1);
+        AfishaManager manager = new AfishaManager(repository, -1);
         Film[] actual = manager.getLastAdded();
         assertArrayEquals(expected, actual);
     }

@@ -6,29 +6,27 @@ import ru.netology.domain.repozitory.AfishaRepository;
 public class AfishaManager {
     private AfishaRepository repository;
     private int show = 10;
-    AfishaManager (){}
 
-    public AfishaManager(AfishaRepository repository,int howManyFilmsToShow) {
+    AfishaManager() {
+    }
+
+    public AfishaManager(AfishaRepository repository, int howManyFilmsToShow) {
         this.repository = repository;
-
-        if (howManyFilmsToShow > 0 & howManyFilmsToShow < 10) {
+        if (howManyFilmsToShow > 0) {
             show = howManyFilmsToShow;
-        }
-        Film[] films = repository.findAll();
-        int filmsLength = films.length;
-        if ( filmsLength< show ){
-            show = filmsLength;
         }
     }
 
     public void addFilm(Film film) {
-       repository.save(film);
+        repository.save(film);
     }
-
 
     public Film[] getLastAdded() {
         Film[] films = repository.findAll();
         int filmsLength = films.length;
+        if (filmsLength < show) {
+            show = filmsLength;
+        }
 
         Film[] customFilm = new Film[show];
         for (int current = 0; current < customFilm.length; current++) {
@@ -38,7 +36,7 @@ public class AfishaManager {
         return customFilm;
     }
 
-    public Film[] getAll(){
+    public Film[] getAll() {
         Film[] films = repository.findAll();
         Film[] result = new Film[films.length];
         for (int i = 0; i < result.length; i++) {
@@ -52,5 +50,3 @@ public class AfishaManager {
         return repository.findAll();
     }
 }
-
-
